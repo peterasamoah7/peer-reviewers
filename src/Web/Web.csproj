@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DataCollection\DataCollection.csproj" />
     <ProjectReference Include="..\Search\Search.csproj" />
   </ItemGroup>
 

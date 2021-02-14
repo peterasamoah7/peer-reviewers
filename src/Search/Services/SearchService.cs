@@ -31,11 +31,11 @@ namespace Search.Services
         /// </summary>
         /// <param name="searchStrs"></param>
         /// <returns></returns>
-        public async Task<SearchResult> GetResults(List<string> searchStrs)
+        public async Task<SearchResult> GetResultsAsync(string searchStrs)
         {
             var queryParams = HttpUtility.ParseQueryString(string.Empty);
 
-            queryParams.Add("search", string.Join(",", searchStrs));
+            queryParams.Add("search", searchStrs);
             queryParams.Add("api-version", _configuration["AzureCognitive:ApiVersion"]);
             queryParams.Add("$select", "metadata_storage_name");
             
