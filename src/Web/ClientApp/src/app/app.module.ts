@@ -11,6 +11,7 @@ import { UploadAreaComponent } from './upload-area/upload-area.component';
 import { ResultsComponent } from './results/results.component';
 import { KeywordsComponent } from './keywords/keywords.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UploadDirective } from './directives/upload.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     UploadAreaComponent,
     ResultsComponent,
     KeywordsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UploadDirective
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-upload-area',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UploadAreaComponent implements OnInit {
 
+  file: File = null;
+  @Output()upload : EventEmitter<any> = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  getfile(file: any){
+    this.upload.emit(file);
+  }
+
+  openUpload(){
+    document.getElementById('file-upload').click();
+  }
 }

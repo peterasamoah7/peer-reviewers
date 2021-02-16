@@ -15,10 +15,14 @@ export class HomeComponent {
   constructor(
     private http: HttpClient,
     @Inject('BASE_URL') baseUrl: string){
-      this.url = `${baseUrl}/reviewer`;
+      this.url = `${baseUrl}reviewers`;
   }
 
-  upload(request: any){
+  upload(files: any){
+
+    let request = new FormData();
+    request.append('file',files[0]);
+
     this.http.post<KeyWords>(this.url, request).subscribe(result => {
       this.keyWords = result;
     }, () => console.log('Api call failed'));
