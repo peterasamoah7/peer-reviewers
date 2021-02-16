@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataCollection.Services;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,8 +7,14 @@ namespace DataCollection.Models
 {
     public class KeyWords
     {
-        public HashSet<string> Topics { get; set; } = new HashSet<string>();
+        /// <summary>
+        /// Key Topics
+        /// </summary>
+        public HashSet<Word> Topics { get; set; } = new HashSet<Word>(new WordComparer());
 
-        public HashSet<string> Phrases { get; set; } = new HashSet<string>();
+        /// <summary>
+        /// Key Phrases
+        /// </summary>
+        public HashSet<Word> Phrases { get; set; } = new HashSet<Word>(new WordComparer());
     }
 }

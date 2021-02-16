@@ -12,4 +12,8 @@
     <PackageReference Include="PdfPig" Version="0.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
+
 </Project>

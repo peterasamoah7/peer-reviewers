@@ -66,13 +66,15 @@ namespace DataCollection.Services
                 ///Add top topics to keywords list
                 foreach (var topic in topics)
                 {
-                    keyWords.Topics.Add(topic.Label);
+                    keyWords.Topics.Add(
+                        new Word(topic.Label, topic.Score));
                 }
 
                 ///Add top phrases to keywords list
                 foreach (var phrase in phrases)
                 {
-                    keyWords.Phrases.Add(phrase.Value);
+                    keyWords.Phrases.Add(
+                        new Word(phrase.Value, phrase.Score));
                 }
             }
 
