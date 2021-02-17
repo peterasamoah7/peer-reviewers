@@ -1,14 +1,29 @@
 <div class="page-body">
-  <h1>PEER REVIEWERS</h1>
+  <h1>Peer Reviewers App</h1>
+  <div class="alert-div">
+    <h5>Uploading a file</h5>
+    <p>The Peer Revievers App helps academic scholars and instituitions to select Peer
+    Reviewers for a submitted paper using document similarity. The content of the upload file is extracted and analyzed
+    using the Expert AI KeyPhrase Extraction API.</p>
+  </div>
   <div class="dropzone-container">
     <app-upload-area (upload)="upload($event)"></app-upload-area>
     <h4 *ngIf="loadingText">Extracting keyphrases and topics....</h4>
   </div>
-  <div class="landing-div">
+  <div *ngIf="keyWords" class="alert-div">
+    <h5>Building an intelligent query</h5>
+    <p>The Topics represented the extracted topics from the KeyPhrase API and represent what the content is about.
+    The Phrases represent the key phrases from the submitted documented. Click the high scoring topics or phrases to build
+    an intelligent query for searching the document index.</p>
   </div>
   <div *ngIf="keyWords" class="actions-container">
     <app-keywords *ngIf="keyWords" [keywords]="keyWords" (send)="search($event)"></app-keywords>
     <h4 *ngIf="loadingText">Searching for matching documents....</h4>
+  </div>
+  <div *ngIf="searchResult" class="alert-div">
+    <h5>Search Results</h5>
+    <p>The search results represent the best matching documents based on the query that was built. The authors of the papers with the highest
+    scoring document similarity scores are the best possible reviewers for the research paper submitted.</p>
   </div>
   <div *ngIf="searchResult" class="results-container">
     <app-results [results]="searchResult"></app-results>

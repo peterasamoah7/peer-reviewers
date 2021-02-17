@@ -83,7 +83,6 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  background-image: url("./assets/images/asfalt-dark.png");
 }
 
 .dropzone-container {
@@ -165,11 +164,11 @@ body {
 .actions-container {
   margin: 10px auto;
   width: 80vw;
-  max-width: 1000px;
+  max-width: 1400px;
 }
 
 .action-btn {
-  color: #9E9E9E;
+  color: black;
   border-color: #9E9E9E;
   border-width: 1px;
   border-style: solid;
@@ -214,9 +213,10 @@ body {
 }
 
 .results-container {
-  margin: 80px auto;
-  width: 80vw;
-  max-width: 1000px;
+  margin: 60px auto;
+  width: 90vw;
+  max-width: 1400px;
+  margin-bottom: 300px;
 }
 
 #results {
@@ -242,5 +242,29 @@ body {
   letter-spacing: 1.4px;
   background-color: #00B0FF;
   color: white;
-  background-image: url("./assets/images/asfalt-dark.png");
 }
+
+.alert-div {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  width: 80vw;
+  margin: 20px auto;
+  background: #BDBDBD;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+  .alert-div h5 {
+    margin: 0;
+    font-size: 1.4em;
+    font-weight: 540em;
+    margin-bottom: 10px;
+  }
+
+  .alert-div p {
+    margin: 0;
+    color: white;
+    letter-spacing: 0.7px;
+  }
+
