@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using Search.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
@@ -31,7 +32,7 @@ namespace Search.Services
         /// </summary>
         /// <param name="searchStrs"></param>
         /// <returns></returns>
-        public async Task<SearchResult> GetResultsAsync(string searchStrs)
+        public async Task<List<ReviewerResult>> GetResultsAsync(string searchStrs)
         {
             var queryParams = HttpUtility.ParseQueryString(string.Empty);
 
@@ -48,7 +49,18 @@ namespace Search.Services
             response.EnsureSuccessStatusCode();
 
             var responseStr = await response.Content.ReadAsStringAsync();
-            return JsonConvert.DeserializeObject<SearchResult>(responseStr); 
+            var result = JsonConvert.DeserializeObject<SearchResult>(responseStr);
+
+            if (result.Value == null)
+                return new List<ReviewerResult>();
+
+            return result.Value.Select(x => 
+                new ReviewerResult {
+                    Data = Reviewer.GetReviewer(x.Paper),
+                    Score = x.Score,
+                    Url = $"{_configuration["AzureCognitive:Docblob"]}/{x.Paper}"
+                })
+                .ToList();  
         }
     }
 }

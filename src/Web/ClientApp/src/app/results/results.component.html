@@ -1,26 +1,17 @@
 <div class="section-title-div">
-  <img src="../../assets/images/results.svg"/>
   <p>Results</p>
 </div>
 <table id="results">
   <tr>
-    <th>Game</th>
-    <th>Release Date</th>
-    <th>Developer</th>
+    <th>Research Paper</th>
+    <th>Document Similarity Score</th>
+    <th>Potential Reviewer</th>
+    <th></th>
   </tr>
-  <tr>
-    <td>Cyberpunk 2077</td>
-    <td>November 2020</td>
-    <td>CD Projekt Red</td>
-  </tr>
-  <tr>
-    <td>Marvel's Spider-Man: Miles Morales</td>
-    <td>November 2020</td>
-    <td>Insomniac Games</td>
-  </tr>
-  <tr>
-    <td>Control</td>
-    <td> August 2019</td>
-    <td>Remedy Entertainment</td>
+  <tr *ngFor="let result of results">
+    <td>{{result.data.reviewer}}</td>
+    <td>{{result.score}}</td>
+    <td>{{result.data.paper}}</td>
+    <td><a href="{{result.url}}" target="_blank">View Paper</a></td>
   </tr>
 </table>

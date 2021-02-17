@@ -5,15 +5,18 @@ export class KeyWords{
 
 export class Word{
   value: string;
-  score: string;
-}
-
-export class SearchResult{
-  value: Array<SearchDetails>;
-}
-
-export class SearchDetails{
   score: number;
-  paper: string;
+}
+
+export class ReviewerResult{
+  data: Data;
   url: string;
+  score: number;
+}
+
+
+export class Data {
+  paper: string;
+  fileName: string;
+  reviewer: string;
 }

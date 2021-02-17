@@ -1,43 +1,26 @@
 <div class="section-title-div">
-  <img src="../../assets/images/owl.png" />
   <p>Topics</p>
 </div>
 <div class="actions">
-  <button class="action-btn blue">
-    Action
-  </button>
-  <button class="action-btn blue">
-    Action
-  </button>
-  <button class="action-btn blue">
-    Action
-  </button>
-  <button class="action-btn blue">
-    Action
-  </button>
-  <button class="action-btn blue">
-    Action
+  <button (click)="selectWord(topic.value)" *ngFor="let topic of keywords.topics" class="action-btn blue">
+    {{topic.value}} {{topic.score}}
   </button>
 </div>
 <div class="section-title-div">
-  <img src="../../assets/images/owl.png" />
   <p>Phrases</p>
 </div>
 <div class="actions">
-  <button class="action-btn blue">
-    Action
+  <button (click)="selectWord(phrase.value)" *ngFor="let phrase of keywords.phrases" class="action-btn green">
+    {{phrase.value}} {{phrase.score}}
   </button>
-  <button class="action-btn blue">
-    Action
-  </button>
-  <button class="action-btn blue">
-    Action
-  </button>
-  <button class="action-btn blue">
-    Action
-  </button>
-  <button class="action-btn blue">
-    Action
+</div>
+<div class="section-title-div">
+  <p>Search {{searchWords.length > 0 ? 'using:' : '' }}
+  <span *ngFor="let word of searchWords">{{word}},</span></p>
+</div>
+<div class="actions">
+  <button (click)="submit()" class="action-btn black">
+    Search for Peer Reviewers
   </button>
 </div>
 

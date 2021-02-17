@@ -2,15 +2,15 @@
   <h1>PEER REVIEWERS</h1>
   <div class="dropzone-container">
     <app-upload-area (upload)="upload($event)"></app-upload-area>
+    <h4 *ngIf="loadingText">Extracting keyphrases and topics....</h4>
   </div>
   <div class="landing-div">
-    <img src="../../assets/images/character.png" class="file"/>
-    <p>Cyberpunk 2077</p>
   </div>
   <div *ngIf="keyWords" class="actions-container">
-    <app-keywords></app-keywords>
+    <app-keywords *ngIf="keyWords" [keywords]="keyWords" (send)="search($event)"></app-keywords>
+    <h4 *ngIf="loadingText">Searching for matching documents....</h4>
   </div>
   <div *ngIf="searchResult" class="results-container">
-    <app-results></app-results>
+    <app-results [results]="searchResult"></app-results>
   </div>
 </div>

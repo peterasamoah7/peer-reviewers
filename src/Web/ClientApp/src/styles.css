@@ -2,6 +2,7 @@ body {
   overflow-x: hidden;
   font-family: 'Roboto', 'sans-serif';
   margin: 0;
+  background-color: #F5F5F5;
 }
 
 .nav {
@@ -59,7 +60,6 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #F5F5F5;
 }
 
 .page-body h1 {

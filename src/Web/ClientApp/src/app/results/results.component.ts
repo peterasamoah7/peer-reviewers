@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { SearchResult } from '../models/common';
+import { ReviewerResult } from '../models/common';
 
 @Component({
   selector: 'app-results',
@@ -9,8 +9,7 @@ import { SearchResult } from '../models/common';
 })
 export class ResultsComponent implements OnInit {
 
-  @Input()results: SearchResult
-  @Output()send: EventEmitter<any> = new EventEmitter();
+  @Input()results: Array<ReviewerResult>;
 
   constructor() { }
 

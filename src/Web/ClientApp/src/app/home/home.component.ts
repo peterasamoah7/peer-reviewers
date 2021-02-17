@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Inject } from '@angular/core';
-import { KeyWords, SearchResult } from '../models/common';
+import { KeyWords, ReviewerResult } from '../models/common';
 
 @Component({
   selector: 'app-home',
@@ -9,8 +9,10 @@ import { KeyWords, SearchResult } from '../models/common';
 export class HomeComponent {
 
   keyWords: KeyWords;
-  searchResult: SearchResult;
+  searchResult: Array<ReviewerResult>;
   url: string = '';
+  loadingText: boolean = false
+  loadingSearch: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -19,18 +21,21 @@ export class HomeComponent {
   }
 
   upload(files: any){
-
+    this.loadingText = true;
     let request = new FormData();
     request.append('file',files[0]);
 
     this.http.post<KeyWords>(this.url, request).subscribe(result => {
       this.keyWords = result;
+      this.loadingText = false;
     }, () => console.log('Api call failed'));
   }
 
   search(request: any){
-    this.http.get<SearchResult>(`${this.url}?query=${request}`).subscribe(result => {
+    this.loadingSearch = true;
+    this.http.get<Array<ReviewerResult>>(`${this.url}?query=${request}`).subscribe(result => {
       this.searchResult = result;
+      this.loadingSearch = false;
     }, () => console.log('Api call failed'));
   }
 
