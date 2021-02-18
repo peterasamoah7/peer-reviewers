@@ -55,7 +55,9 @@ The inspiration for this project is based on a university project I worked on wh
 search store. In this application we take advantage of Expert AI Keyphrase API to extract key phrases from submitted research papers, the topics and 
 main sentences are used to build an intelligent query to retrieve the best matching document from a document store built using Azure Cognitive Services. 
 
-You can view the live appliaction here : [Live site](https://prappexpertai.azurewebsites.net/)   using these research papers : [Test Papers](https://github.com/peterasamoah7/peer-reviewers-expertai/tree/master/reviewpapers)
+You can view the demo [here](demo)
+
+You can try the live application here [Live site](https://prappexpertai.azurewebsites.net/)  using these research papers from the demo [Test Papers](https://github.com/peterasamoah7/peer-reviewers-expertai/tree/master/reviewpapers)
 
 ### Built With
 * [Angular](https://angular.io/)
