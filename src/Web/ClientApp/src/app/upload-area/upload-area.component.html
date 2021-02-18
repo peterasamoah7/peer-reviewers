@@ -1,9 +1,8 @@
 <div class="dropzone" appUpload (send)="getfile($event)">
-  <input type="file" id='file-upload' multiple (change)="getfile($event.target.files)" style="display:none" />
+  <input type="file" #fileDropRef id='file-upload' multiple (change)="getfile($event.target.files)" style="display:none" />
   <span class="material-icons" style="font-size: 65px; color: white;">upload_file</span>
-  <!-- <button (click)="openUpload()" class="upload-btn">
+  <button (click)="openUpload()" class="upload-btn">
     <span class="material-icons" style="margin-right: 5px; color: #212121;">note_add</span>
-    Drag and Drop File
-  </button> -->
-  <p>Drag and Drop File</p>
+    Drop or Upload File
+  </button>
 </div>

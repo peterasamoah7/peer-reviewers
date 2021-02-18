@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-upload-area',
@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class UploadAreaComponent implements OnInit {
 
-  file: File = null;
+  @ViewChild("fileDropRef", { static: false }) fileDropEl: ElementRef;
   @Output()upload : EventEmitter<any> = new EventEmitter();
 
   constructor() { }
@@ -17,6 +17,7 @@ export class UploadAreaComponent implements OnInit {
 
   getfile(file: any){
     this.upload.emit(file);
+    this.fileDropEl.nativeElement.value = "";
   }
 
   openUpload(){
