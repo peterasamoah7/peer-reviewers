@@ -34,6 +34,9 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
       </ul>
+      <ul>
+        <li><a href="#setup">Setup & Running</a></li>
+      </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#license">License</a></li>
@@ -46,8 +49,7 @@
 ## About The Project
 Peer Reviewers App is a web application that uses AI knowledge extraction to perform document similarity to help recommend peer reviewers  for 
 academic and scholarly journals and articles. A possible peer reviewer for a submitted scholarly article or paper is a researcher or academic with experience
-in the research area of the submitted research paper. Using knowledge extraction and document similarity we can compare research papers of two academics to
-determine of one can be a reviewer for the other. 
+in the research area of the submitted research paper. Using knowledge extraction and document similarity we can compare research papers of academics to determine possible reviewers. 
 
 The inspiration for this project is based on a university project I worked on where I used the Bag of Words approach to search indexed documents in a 
 search store. In this application we take advantage of Expert AI Keyphrase API to extract key phrases from submitted research papers, the topics and 
@@ -108,8 +110,17 @@ To run the application locally, please follow the steps below.
     "AuthUrl": "<expert ai authentical base url>"
   }
 }
-  ```
+```
 
+### Running from Visual Studio
+
+1. Install front end dependencies 
+```sh
+npm install
+```
+
+2. From Visual Studio, press `F5`
+ 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
