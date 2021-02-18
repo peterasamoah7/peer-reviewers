@@ -33,7 +33,6 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
@@ -66,7 +65,7 @@ You can view the live appliaction here : [Live site](https://prappexpertai.azure
 
 
 <!-- GETTING STARTED -->
-## Running the application locally
+## Getting Started
 
 To run the application locally, please follow the steps below.
 
