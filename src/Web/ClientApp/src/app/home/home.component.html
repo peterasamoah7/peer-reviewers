@@ -4,11 +4,12 @@
     <h5>Uploading a file</h5>
     <p>The Peer Revievers App helps academic scholars and instituitions to select Peer
     Reviewers for a submitted paper using document similarity. The content of the upload file is extracted and analyzed
-    using the Expert AI KeyPhrase Extraction API.</p>
+    using the Expert AI KeyPhrase Extraction API. Currently only pdf files are supported.</p>
   </div>
   <div class="dropzone-container">
     <app-upload-area (upload)="upload($event)"></app-upload-area>
     <h4 *ngIf="loadingText">Extracting keyphrases and topics....</h4>
+    <h4 *ngIf="error">An error occured.</h4>
   </div>
   <div *ngIf="keyWords" class="alert-div">
     <h5>Building an intelligent query</h5>

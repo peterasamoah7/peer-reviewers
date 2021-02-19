@@ -13,6 +13,7 @@ export class HomeComponent {
   url: string = '';
   loadingText: boolean = false
   loadingSearch: boolean = false;
+  error: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -20,7 +21,8 @@ export class HomeComponent {
       this.url = `${baseUrl}reviewers`;
   }
 
-  upload(files: any){
+  upload(files: any) {
+    this.error = false;
     this.loadingText = true;
     let request = new FormData();
     request.append('file',files[0]);
@@ -28,7 +30,11 @@ export class HomeComponent {
     this.http.post<KeyWords>(this.url, request).subscribe(result => {
       this.keyWords = result;
       this.loadingText = false;
-    }, () => console.log('Api call failed'));
+    }, () => {
+      this.error = true;
+      this.loadingText = false;
+      console.log('Api call failed')
+    });
   }
 
   search(request: any){
