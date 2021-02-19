@@ -87,7 +87,7 @@ To run the application locally, please follow the steps below.
 2. Create a developer account at [Expert AI](https://developer.expert.ai/)
 3. Create a free Azure Account at [Azure](https://azure.microsoft.com/) or use an existing one. 
 4. Create a free Azure Search (Free Tier) resource and index these [research papers](https://github.com/peterasamoah7/peer-reviewers-expertai/tree/master/researchpapers). You can do that by following the tutorial [here](https://docs.microsoft.com/en-us/azure/search/cognitive-search-quickstart-blob). For this project we used 15 unique research papers in various fields in computer science. The details of the research papers are managed in memory. The details can be moved to a database or any persistent storage if prefered. 
-5. Update (appsettings.json) with the following credentials
+5. Update `appsettings.json`
   ```sh
   {
   "Logging": {
