@@ -101,7 +101,7 @@ To run the application locally, please follow the steps below.
   "AzureCognitive": {
     "Endpoint": "<your azure search endpoint>",
     "ApiKey": "<your azure search api key>",
-    "ApiVersion": "<yazure search api version>",
+    "ApiVersion": "<your azure search api version>",
     "Index": "<your azure search index>",
     "Docblob": "<the url to the public blob from your tutorial in pt.4>"
   },
