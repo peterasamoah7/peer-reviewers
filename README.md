@@ -55,7 +55,7 @@ The inspiration for this project is based on a university project I worked on wh
 search store. In this application we take advantage of Expert AI Keyphrase API to extract key phrases from submitted research papers, the topics and 
 main sentences are used to build an intelligent query to retrieve the best matching document from a document store built using Azure Cognitive Services. 
 
-You can view the demo [here](demo)
+You can view the demo [here](https://youtu.be/k9EI3Qo8fvU)
 
 You can try the live application here [Live site](https://prappexpertai.azurewebsites.net/)  using these research papers from the demo [Test Papers](https://github.com/peterasamoah7/peer-reviewers-expertai/tree/master/reviewpapers)
 
@@ -86,7 +86,7 @@ To run the application locally, please follow the steps below.
 1. Clone the repo 
 2. Create a developer account at [Expert AI](https://developer.expert.ai/)
 3. Create a free Azure Account at [Azure](https://azure.microsoft.com/) or use an existing one. 
-4. Create a free Azure Search (Free Tier) resource and index these [research papers](https://github.com/peterasamoah7/peer-reviewers-expertai/tree/master/researchpapers). You can do that by following the tutorial [here](https://docs.microsoft.com/en-us/azure/search/cognitive-search-quickstart-blob). For this project we used 15 unique research papers in various fields in computer science. The details of the research papers are managed in memory. The details can be moved to a database or any persistent storage if prefered. 
+4. Create a free Azure Cognitive Search (Free Tier) resource and index these [research papers](https://github.com/peterasamoah7/peer-reviewers-expertai/tree/master/researchpapers). You can do that by following the tutorial [here](https://docs.microsoft.com/en-us/azure/search/cognitive-search-quickstart-blob). For this project we used 15 unique research papers in various fields in computer science. The details of the research papers are managed in memory. The details can be moved to a database or any persistent storage if prefered. 
 5. Update `appsettings.json`
   ```sh
   {
@@ -126,7 +126,7 @@ npm install
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Please refer to the [demo](https://example.com)
+Please refer to the [demo](https://youtu.be/k9EI3Qo8fvU)
 
 <!-- LICENSE -->
 ## License
