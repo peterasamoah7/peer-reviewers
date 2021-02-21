@@ -34,6 +34,7 @@ export class KeywordsComponent implements OnInit {
     }
     console.log(query);
     this.send.emit(query);
+    this.searchWords = []; 
   }
 
 }

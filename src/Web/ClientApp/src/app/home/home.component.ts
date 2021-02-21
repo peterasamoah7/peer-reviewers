@@ -14,6 +14,7 @@ export class HomeComponent {
   loadingText: boolean = false
   loadingSearch: boolean = false;
   error: boolean = false;
+  query: string;
 
   constructor(
     private http: HttpClient,
@@ -24,6 +25,7 @@ export class HomeComponent {
   upload(files: any) {
     this.error = false;
     this.loadingText = true;
+    this.query = ''; 
     let request = new FormData();
     request.append('file',files[0]);
 
@@ -37,7 +39,8 @@ export class HomeComponent {
     });
   }
 
-  search(request: any){
+  search(request: any) {
+    this.query = request; 
     this.loadingSearch = true;
     this.http.get<Array<ReviewerResult>>(`${this.url}?query=${request}`).subscribe(result => {
       this.searchResult = result;
